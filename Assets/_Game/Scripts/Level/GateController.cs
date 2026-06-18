@@ -1,0 +1,95 @@
+// TOY WAR RUSH - GateController.cs
+// Gates modify army size on trigger. Supports +, -, ×, ÷ operations.
+
+using UnityEngine;
+using TMPro;
+
+public enum GateOperation { Add, Subtract, Multiply, Divide }
+
+public class GateController : MonoBehaviour
+{
+    [Header("Gate Config")]
+    [SerializeField] private GateOperation operation;
+    [SerializeField] private float value = 2f;
+
+    [Header("References")]
+    [SerializeField] private TextMeshPro valueText;
+    [SerializeField] private MeshRenderer gateRenderer;
+    [SerializeField] private Material positiveMat;
+    [SerializeField] private Material negativeMat;
+
+    private bool _triggered;
+
+    private void Start()
+    {
+        UpdateVisuals();
+    }
+
+    public void Initialize(GateOperation op, float val)
+    {
+        operation = op;
+        value = val;
+        UpdateVisuals();
+    }
+
+    private void UpdateVisuals()
+    {
+        bool isPositive = operation == GateOperation.Add || operation == GateOperation.Multiply;
+
+        if (gateRenderer != null && positiveMat != null && negativeMat != null)
+            gateRenderer.material = isPositive ? positiveMat : negativeMat;
+
+        if (valueText != null)
+        {
+            string prefix = operation switch
+            {
+                GateOperation.Add => "+",
+                GateOperation.Subtract => "-",
+                GateOperation.Multiply => "×",
+                GateOperation.Divide => "÷",
+                _ => "+"
+            };
+            valueText.text = $"{prefix}{value}";
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (_triggered) return;
+        if (!other.CompareTag("Player")) return;
+
+        _triggered = true;
+        ApplyEffect();
+
+        FXManager.Instance?.PlayEffect("GateHit", transform.position);
+        AudioManager.Instance?.PlaySFX("gate_pass");
+        EventBus.Publish(GameEvents.GatePassed);
+        AnalyticsManager.Instance?.LogEvent("gate_hit", new System.Collections.Generic.Dictionary<string, object>
+        {
+            { "operation", operation.ToString() },
+            { "value", value }
+        });
+    }
+
+    private void ApplyEffect()
+    {
+        var army = ArmyManager.Instance;
+        if (army == null) return;
+
+        switch (operation)
+        {
+            case GateOperation.Add:
+                army.AddUnits((int)value);
+                break;
+            case GateOperation.Subtract:
+                army.RemoveUnits((int)value);
+                break;
+            case GateOperation.Multiply:
+                army.MultiplyArmy(value);
+                break;
+            case GateOperation.Divide:
+                army.DivideArmy(value);
+                break;
+        }
+    }
+}

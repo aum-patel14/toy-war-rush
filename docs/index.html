@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toy War Rush — Army Runner Game</title>
+  <meta name="description" content="Grow your toy army, evolve your troops, crush the fortress! Coming soon to Android." />
+  <style>
+    :root {
+      --orange: #FF6B35;
+      --teal: #4ECDC4;
+      --yellow: #FFE66D;
+      --dark: #1A1A2E;
+      --green: #6BCB77;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--dark);
+      color: #fff;
+      min-height: 100vh;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 1.5rem 3rem;
+      background: radial-gradient(ellipse at top, #2a2a4e 0%, var(--dark) 70%);
+    }
+    .badge {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+    h1 span { color: var(--yellow); }
+    .tagline {
+      font-size: 1.15rem;
+      color: #aaa;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+    .cta {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--orange), #ff8f65);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 0.9rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(255,107,53,0.4);
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+    .card .icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .card h3 { color: var(--teal); margin-bottom: 0.5rem; font-size: 1rem; }
+    .card p { color: #999; font-size: 0.9rem; line-height: 1.5; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #555;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    footer a { color: var(--teal); }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="badge">Coming Soon — Android</div>
+    <h1>TOY <span>WAR</span> RUSH</h1>
+    <p class="tagline">Swipe to steer your toy army through math gates, evolve into titans, and crush enemy fortresses!</p>
+    <a class="cta" href="https://github.com/aum-patel14/toy-war-rush">View on GitHub</a>
+  </section>
+  <section class="features">
+    <div class="card">
+      <div class="icon">🪖</div>
+      <h3>Army Builder</h3>
+      <p>Collect units, pass +10 and ×2 gates, grow your army to hundreds.</p>
+    </div>
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h3>Toy Evolution</h3>
+      <p>Soldiers evolve into Knights, Robots, Mechs, and Ultra Titans.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🏰</div>
+      <h3>Fortress Battles</h3>
+      <p>Every level ends in an epic auto-battle against a toy fortress.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🌍</div>
+      <h3>10 Toy Worlds</h3>
+      <p>Bedroom, classroom, toy store, and more — 100+ levels planned.</p>
+    </div>
+  </section>
+  <footer>
+    Built with Unity 6 · <a href="https://github.com/aum-patel14/toy-war-rush">Source Code</a>
+  </footer>
+</body>
+</html>

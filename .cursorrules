@@ -1,0 +1,9 @@
+This is a Unity 6 mobile game called Toy War Rush.
+- Language: C#
+- Architecture: Singleton managers, ScriptableObjects, Event-driven
+- Pattern: ObjectPool for all spawned objects
+- Always use [SerializeField] for inspector fields, never public
+- Always null-check before using Instance references
+- Use TMP (TextMeshPro) for all UI text
+- All coroutines must have cancellation handling
+- Mobile: avoid Update() allocations, cache component references in Awake()

@@ -1,0 +1,35 @@
+{
+  "levels": [
+    {
+      "levelNumber": 1,
+      "worldName": "Bedroom",
+      "theme": "Bedroom",
+      "startingArmySize": 5,
+      "fortressHP": 50,
+      "coinsReward": 50,
+      "gates": [
+        { "operation": "Add", "value": 5, "zPosition": 15, "xPosition": 0 },
+        { "operation": "Multiply", "value": 2, "zPosition": 35, "xPosition": 0 }
+      ],
+      "obstacles": [
+        { "type": "SockBall", "zPosition": 25, "xPosition": 1, "unitDamage": 2 }
+      ]
+    },
+    {
+      "levelNumber": 2,
+      "worldName": "Bedroom",
+      "theme": "Bedroom",
+      "startingArmySize": 5,
+      "fortressHP": 75,
+      "coinsReward": 60,
+      "gates": [
+        { "operation": "Add", "value": 10, "zPosition": 12, "xPosition": -1 },
+        { "operation": "Multiply", "value": 2, "zPosition": 40, "xPosition": 1 }
+      ],
+      "obstacles": [
+        { "type": "ToyTrain", "zPosition": 22, "xPosition": 0, "unitDamage": 3 },
+        { "type": "Cat", "zPosition": 50, "xPosition": -1, "unitDamage": 5 }
+      ]
+    }
+  ]
+}
