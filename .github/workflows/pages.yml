@@ -28,9 +28,10 @@ jobs:
 
       - name: Prepare site
         run: |
-          mkdir -p _site
+          mkdir -p _site docs/preview
           cp -r docs/* _site/
-          cp -r preview _site/preview
+          cp -r preview/* docs/preview/
+          cp -r docs/preview _site/preview
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
