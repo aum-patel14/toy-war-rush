@@ -3,6 +3,7 @@
 
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public enum GateOperation { Add, Subtract, Multiply, Divide }
 
@@ -19,9 +20,12 @@ public class GateController : MonoBehaviour
     [SerializeField] private Material negativeMat;
 
     private bool _triggered;
+    private Color _baseColor = Color.white;
 
     private void Start()
     {
+        if (gateRenderer != null)
+            _baseColor = gateRenderer.material.color;
         UpdateVisuals();
     }
 
@@ -63,6 +67,8 @@ public class GateController : MonoBehaviour
 
         FXManager.Instance?.PlayEffect("GateHit", transform.position);
         AudioManager.Instance?.PlaySFX("gate_pass");
+        CameraFollow.Instance?.Shake(0.25f);
+        StartCoroutine(GateFlash());
         EventBus.Publish(GameEvents.GatePassed);
         AnalyticsManager.Instance?.LogEvent("gate_hit", new System.Collections.Generic.Dictionary<string, object>
         {
@@ -79,17 +85,27 @@ public class GateController : MonoBehaviour
         switch (operation)
         {
             case GateOperation.Add:
-                army.AddUnits((int)value);
+                army.AddUnits(Mathf.RoundToInt(value * UpgradeRuntime.GateBonusMultiplier()));
                 break;
             case GateOperation.Subtract:
                 army.RemoveUnits((int)value);
                 break;
             case GateOperation.Multiply:
-                army.MultiplyArmy(value);
+                army.MultiplyArmy(value * UpgradeRuntime.GateBonusMultiplier());
                 break;
             case GateOperation.Divide:
                 army.DivideArmy(value);
                 break;
         }
+    }
+
+    private IEnumerator GateFlash()
+    {
+        if (gateRenderer == null) yield break;
+
+        var mat = gateRenderer.material;
+        mat.color = Color.white;
+        yield return new WaitForSeconds(0.08f);
+        mat.color = _baseColor;
     }
 }

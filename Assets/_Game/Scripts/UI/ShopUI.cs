@@ -14,7 +14,7 @@ public class ShopUI : MonoBehaviour
 
     public void OnPurchaseNoAds()
     {
-        shopManager?.PurchaseWithIAP("no_ads");
+        shopManager?.PurchaseWithIAP("remove_ads");
     }
 
     public void OnClose() => gameObject.SetActive(false);

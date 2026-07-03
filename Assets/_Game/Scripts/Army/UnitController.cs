@@ -55,7 +55,7 @@ public class UnitController : MonoBehaviour
     private void ApplyVisuals()
     {
         if (_data == null) return;
-        transform.localScale = Vector3.one * _data.scale;
+        transform.localScale = Vector3.one * (_data.scale * 1.18f);
     }
 
     public void TakeDamage(int damage)

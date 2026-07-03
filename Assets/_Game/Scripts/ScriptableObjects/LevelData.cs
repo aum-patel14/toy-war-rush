@@ -21,6 +21,9 @@ public class LevelData : ScriptableObject
     [Header("Obstacles")]
     public List<ObstacleData> obstacles = new();
 
+    [Header("Collectibles")]
+    public List<CollectibleData> collectibles = new();
+
     [Header("Fortress")]
     public int fortressHP = 100;
     public int fortressDefenderCount = 10;
@@ -50,6 +53,14 @@ public class ObstacleData
     public float zPosition;
     public float xPosition;
     public int unitDamage;
+}
+
+[System.Serializable]
+public class CollectibleData
+{
+    public float zPosition;
+    public float xPosition;
+    public int armyBonus = 1;
 }
 
 public enum WorldTheme { Bedroom, StudyRoom, Classroom, ToyStore, GamingRoom, Kitchen, Garage, Garden, Bathroom, Space }

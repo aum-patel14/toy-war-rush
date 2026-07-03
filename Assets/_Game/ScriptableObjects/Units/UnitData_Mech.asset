@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ffad010a9b1ce343a409645f354e058, type: 3}
+  m_Name: UnitData_Mech
+  m_EditorClassIdentifier: ToyWarRush::UnitData
+  tier: 3
+  displayName: Mech
+  icon: {fileID: 0}
+  prefab: {fileID: 6065800016247493204, guid: f0e7479144871fc4f808fef3a2ebc138, type: 3}
+  maxHP: 55
+  attackDamage: 30
+  attackSpeed: 1
+  attackRange: 2
+  moveRadius: 0.8
+  requiredArmySize: 50
+  evolvesInto: 4
+  scale: 1
+  evolutionParticleColor: {r: 1, g: 1, b: 1, a: 1}
+  evolutionSound: {fileID: 0}
+  attackSound: {fileID: 0}
+  deathSound: {fileID: 0}

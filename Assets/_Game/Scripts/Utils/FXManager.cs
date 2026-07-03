@@ -3,6 +3,7 @@
 
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class FXManager : MonoBehaviour
 {
@@ -19,6 +20,25 @@ public class FXManager : MonoBehaviour
     [SerializeField] private int poolSize = 10;
 
     private readonly Dictionary<string, GenericPool> _pools = new();
+
+    private sealed class AutoReturn : MonoBehaviour
+    {
+        private GenericPool _pool;
+        private float _returnAt;
+
+        public void Arm(GenericPool pool, float delay)
+        {
+            _pool = pool;
+            _returnAt = Time.time + Mathf.Max(0.02f, delay);
+        }
+
+        private void Update()
+        {
+            if (_pool == null || Time.time < _returnAt) return;
+            _pool.Return(gameObject);
+            enabled = false;
+        }
+    }
 
     private void Awake()
     {
@@ -37,15 +57,16 @@ public class FXManager : MonoBehaviour
         if (!_pools.TryGetValue(effectName, out var pool)) return;
 
         var fx = pool.Get(position, Quaternion.identity);
+        var autoReturn = fx.GetComponent<AutoReturn>();
+        if (autoReturn == null) autoReturn = fx.AddComponent<AutoReturn>();
         var particles = fx.GetComponent<ParticleSystem>();
+        float returnDelay = 0.6f;
         if (particles != null)
         {
             particles.Play();
-            Destroy(fx, particles.main.duration + particles.main.startLifetime.constantMax);
+            returnDelay = particles.main.duration + particles.main.startLifetime.constantMax;
         }
-        else
-        {
-            Destroy(fx, 2f);
-        }
+        autoReturn.enabled = true;
+        autoReturn.Arm(pool, returnDelay);
     }
 }

@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private ResultScreenUI resultScreen;
     [SerializeField] private UpgradeMenuUI upgradeMenu;
     [SerializeField] private ShopUI shopUI;
+    [SerializeField] private LevelSelectUI levelSelect;
 
     private void Awake()
     {
@@ -36,6 +37,7 @@ public class UIManager : MonoBehaviour
         resultScreen?.gameObject.SetActive(state == GameState.Victory || state == GameState.Defeat);
         upgradeMenu?.gameObject.SetActive(false);
         shopUI?.gameObject.SetActive(false);
+        levelSelect?.gameObject.SetActive(false);
 
         if (state == GameState.Victory)
             resultScreen?.ShowVictory();
@@ -45,4 +47,9 @@ public class UIManager : MonoBehaviour
 
     public void ShowUpgradeMenu() => upgradeMenu?.gameObject.SetActive(true);
     public void ShowShop() => shopUI?.gameObject.SetActive(true);
+    public void ShowLevelSelect()
+    {
+        levelSelect?.gameObject.SetActive(true);
+        levelSelect?.BuildGrid();
+    }
 }

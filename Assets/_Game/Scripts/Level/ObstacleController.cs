@@ -21,6 +21,8 @@ public class ObstacleController : MonoBehaviour
 
         ArmyManager.Instance?.RemoveUnits(unitDamage);
         AudioManager.Instance?.PlaySFX("unit_death");
+        CameraFollow.Instance?.Shake(0.4f);
+        FXManager.Instance?.PlayEffect("ObstacleHit", transform.position);
         EventBus.Publish(GameEvents.ObstacleHit);
 
         if (destroyOnHit)

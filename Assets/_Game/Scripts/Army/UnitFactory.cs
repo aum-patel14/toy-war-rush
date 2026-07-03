@@ -28,6 +28,7 @@ public class UnitFactory : MonoBehaviour
 
         var root = ArmyManager.Instance.FormationRoot;
         var instance = Instantiate(prefab, root);
+
         var unit = instance.GetComponent<UnitController>();
         if (unit == null)
         {

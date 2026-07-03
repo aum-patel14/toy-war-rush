@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Toy War Rush - Grow your toy army">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6ECBFF"/>
+      <stop offset="50%" stop-color="#B8A9FF"/>
+      <stop offset="100%" stop-color="#FFB3D9"/>
+    </linearGradient>
+    <linearGradient id="dark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a0a2e"/>
+      <stop offset="100%" stop-color="#2d1b69"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#dark)"/>
+  <rect x="0" y="0" width="700" height="630" fill="url(#sky)" opacity="0.35"/>
+  <!-- Phone mockup -->
+  <rect x="720" y="55" width="380" height="520" rx="36" fill="#1a0a2e" stroke="#FFE66D" stroke-width="8"/>
+  <rect x="736" y="75" width="348" height="480" rx="24" fill="#6ECBFF"/>
+  <rect x="736" y="280" width="348" height="275" fill="#FFDAB9"/>
+  <ellipse cx="910" cy="310" rx="140" ry="24" fill="#9B5DE5" stroke="#2D1B4E" stroke-width="4"/>
+  <path d="M820 200 L910 120 L1000 200 L1000 380 L820 380 Z" fill="#FFE8A3" stroke="#2D1B4E" stroke-width="4"/>
+  <path d="M860 240 Q910 180 960 240 L960 280 Q910 320 860 280 Z" fill="#6BCB77" stroke="#2D1B4E" stroke-width="3"/>
+  <text x="910" y="258" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="700" fill="#2D1B4E">+10</text>
+  <circle cx="910" cy="420" r="36" fill="#6BCB77" stroke="#2D1B4E" stroke-width="4"/>
+  <rect x="780" y="480" width="260" height="48" rx="12" fill="#FF6B35" stroke="#2D1B4E" stroke-width="3"/>
+  <text x="910" y="512" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="700" fill="#fff">FORT</text>
+  <!-- Title -->
+  <text x="60" y="180" font-family="Comic Sans MS,Segoe UI,sans-serif" font-size="72" font-weight="700" fill="#FF6B35" stroke="#2D1B4E" stroke-width="4" paint-order="stroke">TOY WAR</text>
+  <text x="60" y="260" font-family="Comic Sans MS,Segoe UI,sans-serif" font-size="72" font-weight="700" fill="#FFE66D" stroke="#2D1B4E" stroke-width="4" paint-order="stroke">RUSH</text>
+  <text x="60" y="330" font-family="Segoe UI,sans-serif" font-size="28" fill="#cbb8ff">Swipe � Grow � Smash the Fortress!</text>
+  <rect x="60" y="380" width="220" height="56" rx="16" fill="#6BCB77" stroke="#2D1B4E" stroke-width="4"/>
+  <text x="170" y="416" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="22" font-weight="700" fill="#2D1B4E">Play Demo</text>
+  <text x="60" y="520" font-family="Segoe UI,sans-serif" font-size="20" fill="#888">Coming soon to Android</text>
+</svg>

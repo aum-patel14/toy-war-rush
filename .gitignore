@@ -77,3 +77,8 @@ Desktop.ini
 
 # Plastic SCM
 .plastic/
+
+# Local tooling / logs (not part of the game repo)
+Unity Hub/
+unity-*.log
+Setup Guide In-Editor Tutorial/

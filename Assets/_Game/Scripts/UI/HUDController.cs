@@ -2,6 +2,7 @@
 // In-game HUD: army count, tier, level, coins.
 
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class HUDController : MonoBehaviour
@@ -10,14 +11,22 @@ public class HUDController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI tierText;
     [SerializeField] private TextMeshProUGUI levelText;
     [SerializeField] private TextMeshProUGUI coinsText;
+    [SerializeField] private Image progressFill;
+    [SerializeField] private Color normalArmyColor = new(0.13f, 0.45f, 0.85f);
+    [SerializeField] private Color dangerArmyColor = new(0.9f, 0.2f, 0.2f);
+
+    private Transform _player;
+    private Vector3 _armyTextScale = Vector3.one;
 
     private void OnEnable()
     {
         ArmyManager.OnArmyCountChanged += UpdateArmyCount;
         ArmyManager.OnEvolutionTriggered += UpdateTier;
-        CurrencyManager.Instance.OnCoinsChanged += UpdateCoins;
+        if (CurrencyManager.Instance != null)
+            CurrencyManager.Instance.OnCoinsChanged += UpdateCoins;
         UpdateLevel();
         UpdateCoins(CurrencyManager.Instance?.Coins ?? 0);
+        _player = GameObject.FindGameObjectWithTag("Player")?.transform;
     }
 
     private void OnDisable()
@@ -31,7 +40,11 @@ public class HUDController : MonoBehaviour
     private void UpdateArmyCount(int count)
     {
         if (armyCountText != null)
+        {
             armyCountText.text = count.ToString();
+            armyCountText.color = count <= 8 ? dangerArmyColor : normalArmyColor;
+            armyCountText.transform.localScale = _armyTextScale * 1.16f;
+        }
     }
 
     private void UpdateTier(UnitTier tier)
@@ -50,6 +63,19 @@ public class HUDController : MonoBehaviour
     {
         if (coinsText != null)
             coinsText.text = coins.ToString();
+    }
+
+    private void Update()
+    {
+        if (armyCountText != null)
+            armyCountText.transform.localScale = Vector3.Lerp(armyCountText.transform.localScale, _armyTextScale, Time.deltaTime * 10f);
+
+        if (progressFill == null || _player == null || LevelManager.Instance == null) return;
+        float start = LevelManager.Instance.PlayerStartZ;
+        float end = LevelManager.Instance.LevelEndZ;
+        if (end <= start) return;
+        float t = Mathf.Clamp01((_player.position.z - start) / (end - start));
+        progressFill.fillAmount = t;
     }
 
     public void OnPausePressed()

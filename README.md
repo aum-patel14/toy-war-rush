@@ -2,6 +2,17 @@
 
 Casual hyper-runner / army builder for Android (Unity 6).
 
+## Play Now (Browser Demo)
+
+| Link | Description |
+|------|-------------|
+| **Local** | Double-click [`OPEN_GAME.bat`](OPEN_GAME.bat) or run [`PREVIEW.bat`](PREVIEW.bat) → http://localhost:8080 |
+| **Landing page** | Open [`docs/index.html`](docs/index.html) locally |
+| **Live (after push)** | https://aum-patel14.github.io/toy-war-rush/ |
+| **Playable demo** | https://aum-patel14.github.io/toy-war-rush/preview/ |
+
+The browser preview in [`preview/index.html`](preview/index.html) is the gameplay reference for Unity polish.
+
 ## One-Click Setup (Windows)
 
 **Double-click `SETUP.bat`** or run:

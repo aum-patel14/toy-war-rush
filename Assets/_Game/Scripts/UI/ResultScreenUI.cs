@@ -65,12 +65,13 @@ public class ResultScreenUI : MonoBehaviour
 
     public void OnWatchAdContinue()
     {
-        AdManager.Instance?.ShowRewardedAd(success =>
+        AdManager.Instance?.ShowRewardedContinue(success =>
         {
             if (success)
+            {
                 RewardSystem.Instance?.GrantContinueReward();
-            else
                 gameObject.SetActive(false);
+            }
         });
     }
 }

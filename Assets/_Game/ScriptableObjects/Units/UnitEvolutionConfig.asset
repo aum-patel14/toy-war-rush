@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c69871375739fe74fb3bdf5dc8ac6581, type: 3}
+  m_Name: UnitEvolutionConfig
+  m_EditorClassIdentifier: ToyWarRush::UnitEvolutionConfig
+  tierData:
+  - {fileID: 11400000, guid: ff70990d83637b842a5df6ac36055d07, type: 2}
+  - {fileID: 11400000, guid: 41e65b614c533c84eaf512b850afeff0, type: 2}
+  - {fileID: 11400000, guid: 99f43ee2907a1b44c8250946366f22f3, type: 2}
+  - {fileID: 11400000, guid: e3c0484f3835eaa40aa05b600ad7c33d, type: 2}
+  - {fileID: 11400000, guid: 13a93b58233e18448b14e8ad14ce8292, type: 2}
+  - {fileID: 11400000, guid: e858ff1886919474db3d3ba69e3967d9, type: 2}

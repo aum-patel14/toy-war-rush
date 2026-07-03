@@ -46,4 +46,5 @@ public class MainMenuUI : MonoBehaviour
 
     public void OnShopPressed() => UIManager.Instance?.ShowShop();
     public void OnUpgradePressed() => UIManager.Instance?.ShowUpgradeMenu();
+    public void OnLevelsPressed() => UIManager.Instance?.ShowLevelSelect();
 }

@@ -45,8 +45,10 @@ public class RewardSystem : MonoBehaviour
 
     public void GrantContinueReward()
     {
-        int current = ArmyManager.Instance?.ArmyCount ?? 1;
-        ArmyManager.Instance?.AddUnits(Mathf.Max(current, 1));
+        int startSize = LevelManager.Instance?.StartingArmySize ?? 5;
+        int reviveCount = Mathf.Max(1, startSize / 2);
+        ArmyManager.Instance?.ClearArmy();
+        ArmyManager.Instance?.AddUnits(reviveCount);
         GameManager.Instance?.SetState(GameState.Playing);
     }
 }

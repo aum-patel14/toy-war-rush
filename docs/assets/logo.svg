@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Toy War Rush">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d1b69"/>
+      <stop offset="100%" stop-color="#1a0a2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <rect x="32" y="32" width="448" height="448" rx="80" fill="none" stroke="#FFE66D" stroke-width="12"/>
+  <rect x="48" y="48" width="416" height="416" rx="72" fill="none" stroke="#9B5DE5" stroke-width="8"/>
+  <ellipse cx="256" cy="340" rx="120" ry="28" fill="rgba(45,27,78,0.4)"/>
+  <circle cx="256" cy="220" r="90" fill="#FFCCAA" stroke="#2D1B4E" stroke-width="8"/>
+  <path d="M166 200 Q256 120 346 200" fill="#2D8B3A" stroke="#2D1B4E" stroke-width="8"/>
+  <rect x="186" y="198" width="140" height="24" rx="8" fill="#2D8B3A" stroke="#2D1B4E" stroke-width="6"/>
+  <ellipse cx="220" cy="215" rx="18" ry="20" fill="#fff" stroke="#2D1B4E" stroke-width="4"/>
+  <ellipse cx="292" cy="215" rx="18" ry="20" fill="#fff" stroke="#2D1B4E" stroke-width="4"/>
+  <circle cx="226" cy="218" r="10" fill="#2D1B4E"/>
+  <circle cx="298" cy="218" r="10" fill="#2D1B4E"/>
+  <path d="M230 250 Q256 275 282 250" fill="none" stroke="#2D1B4E" stroke-width="6" stroke-linecap="round"/>
+  <rect x="196" y="300" width="120" height="80" rx="16" fill="#6BCB77" stroke="#2D1B4E" stroke-width="8"/>
+  <text x="256" y="420" text-anchor="middle" font-family="Comic Sans MS,Segoe UI,sans-serif" font-size="42" font-weight="700" fill="#FF6B35" stroke="#2D1B4E" stroke-width="3" paint-order="stroke">TOY WAR</text>
+  <text x="256" y="468" text-anchor="middle" font-family="Comic Sans MS,Segoe UI,sans-serif" font-size="38" font-weight="700" fill="#FFE66D" stroke="#2D1B4E" stroke-width="3" paint-order="stroke">RUSH</text>
+</svg>

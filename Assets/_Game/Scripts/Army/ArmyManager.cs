@@ -152,8 +152,8 @@ public class ArmyManager : MonoBehaviour
     private Vector3 GetFormationOffset(int index)
     {
         float angle = index * 137.5f * Mathf.Deg2Rad;
-        float radius = 0.5f + index * 0.05f;
-        return new Vector3(Mathf.Cos(angle) * radius, 0f, Mathf.Sin(angle) * radius);
+        float radius = 0.32f + index * 0.035f;
+        return new Vector3(Mathf.Cos(angle) * radius, 0f, Mathf.Sin(angle) * radius * 0.78f);
     }
 
     public int GetTotalArmyPower()
