@@ -95,6 +95,10 @@ public class LevelManager : MonoBehaviour
         GameManager.Instance?.SetState(GameState.Playing);
         AnalyticsManager.Instance?.LogLevelStart(levelNumber);
         EventBus.Publish(GameEvents.LevelLoaded, levelNumber);
+        GameplayJuice.Instance?.ResetForLevel();
+        BiomeEnvironmentController biome = FindAnyObjectByType<BiomeEnvironmentController>();
+        if (biome != null)
+            biome.ApplyBiome(levelNumber);
     }
 
     private LevelData GetLevelData(int levelNumber)
@@ -139,10 +143,14 @@ public class LevelManager : MonoBehaviour
                 var prefab = GetObstaclePrefab(obstacle.type);
                 if (prefab == null) continue;
                 var obj = Instantiate(prefab, root);
-                obj.transform.position = new Vector3(obstacle.xPosition, 0f, obstacle.zPosition);
+                float obstacleY = obstacle.type == ObstacleType.SpikeRoller ? 0.45f : 0f;
+                obj.transform.position = new Vector3(obstacle.xPosition, obstacleY, obstacle.zPosition);
                 maxZ = Mathf.Max(maxZ, obstacle.zPosition);
-                var controller = obj.GetComponent<ObstacleController>();
-                controller?.Initialize(obstacle.type, obstacle.unitDamage);
+                if (obj.GetComponent<SpikeRollerController>() == null)
+                {
+                    var controller = obj.GetComponent<ObstacleController>();
+                    controller?.Initialize(obstacle.type, obstacle.unitDamage);
+                }
                 _spawnedObjects.Add(obj);
             }
         }

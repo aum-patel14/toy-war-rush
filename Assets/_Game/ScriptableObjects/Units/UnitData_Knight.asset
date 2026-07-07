@@ -15,7 +15,7 @@ MonoBehaviour:
   tier: 1
   displayName: Knight
   icon: {fileID: 0}
-  prefab: {fileID: 7349282608115467248, guid: 5776a979314bda443925645081cba8fd, type: 3}
+  prefab: {fileID: 2931455838894267909, guid: 5776a979314bda443925645081cba8fd, type: 3}
   maxHP: 20
   attackDamage: 10
   attackSpeed: 1

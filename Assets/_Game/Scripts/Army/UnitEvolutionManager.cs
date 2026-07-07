@@ -33,18 +33,23 @@ public class UnitEvolutionManager : MonoBehaviour
     {
         if (_evolutionCoroutine != null)
             StopCoroutine(_evolutionCoroutine);
-        _evolutionCoroutine = StartCoroutine(PlayEvolutionBurst());
+        _evolutionCoroutine = StartCoroutine(PlayEvolutionBurst(tier));
     }
 
-    private IEnumerator PlayEvolutionBurst()
+    private IEnumerator PlayEvolutionBurst(UnitTier tier)
     {
+        var player = GameObject.FindGameObjectWithTag("Player");
+        Vector3 pos = player != null ? player.transform.position + Vector3.up : Vector3.zero;
+
+        FloatingTextFx.Instance?.Spawn("EVOLVE!", pos, new Color(1f, 0.9f, 0.35f));
+        FXManager.Instance?.PlayEffect("Evolution", pos);
+        CameraFollow.Instance?.Shake(0.45f);
+        AudioManager.Instance?.PlaySFX("unit_evolve");
+
         float elapsed = 0f;
         while (elapsed < evolutionAnimDuration)
         {
             elapsed += Time.deltaTime;
-            float t = elapsed / evolutionAnimDuration;
-            float scale = scaleCurve.Evaluate(t);
-            // Visual pulse handled per-unit in UnitController.Evolve
             yield return null;
         }
         _evolutionCoroutine = null;

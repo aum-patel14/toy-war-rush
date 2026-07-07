@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
             case GameState.Victory:
                 AnalyticsManager.Instance?.LogLevelComplete(LevelManager.Instance?.CurrentLevel ?? 1);
                 RewardSystem.Instance?.GrantLevelReward();
+                AdManager.Instance?.OnLevelComplete();
                 break;
             case GameState.Defeat:
                 AdManager.Instance?.ShowContinueOffer();

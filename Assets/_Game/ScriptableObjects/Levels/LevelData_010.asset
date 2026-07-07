@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LevelData_010
   m_EditorClassIdentifier: ToyWarRush::LevelData
   levelNumber: 10
-  worldName: Bedroom
-  theme: 0
+  worldName: Desert Highway
+  theme: 7
   startingArmySize: 13
   gates:
   - operation: 0
@@ -57,8 +57,8 @@ MonoBehaviour:
   - zPosition: 165
     xPosition: 1.3
     armyBonus: 1
-  fortressHP: 205
-  fortressDefenderCount: 28
+  fortressHP: 142
+  fortressDefenderCount: 26
   hasBoss: 1
   bossType: 0
   coinsReward: 230

@@ -15,7 +15,7 @@ MonoBehaviour:
   tier: 0
   displayName: Toy Soldier
   icon: {fileID: 0}
-  prefab: {fileID: 2048280753344105942, guid: eabc691c1f063ee4099a92929045185d, type: 3}
+  prefab: {fileID: 7583102808731704643, guid: eabc691c1f063ee4099a92929045185d, type: 3}
   maxHP: 10
   attackDamage: 5
   attackSpeed: 1

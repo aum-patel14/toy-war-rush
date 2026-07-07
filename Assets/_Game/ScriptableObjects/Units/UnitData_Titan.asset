@@ -15,7 +15,7 @@ MonoBehaviour:
   tier: 4
   displayName: Titan
   icon: {fileID: 0}
-  prefab: {fileID: 7218718287565043332, guid: edb5bae5b4583f945a1fad0df3ca5780, type: 3}
+  prefab: {fileID: 6855083927108593591, guid: edb5bae5b4583f945a1fad0df3ca5780, type: 3}
   maxHP: 90
   attackDamage: 50
   attackSpeed: 1

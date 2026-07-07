@@ -12,18 +12,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d1c2db86640d324eaceda8432946acb, type: 3}
   m_Name: LevelData_029
   m_EditorClassIdentifier: ToyWarRush::LevelData
-  levelNumber: 0
-  worldName: 
-  theme: 0
-  startingArmySize: 5
-  gates: []
-  obstacles: []
-  collectibles: []
-  fortressHP: 100
-  fortressDefenderCount: 10
+  levelNumber: 29
+  worldName: Outdoor
+  theme: 9
+  startingArmySize: 12
+  gates:
+  - operation: 2
+    value: 2
+    zPosition: 48
+    xPosition: 0
+  - operation: 0
+    value: 20
+    zPosition: 113
+    xPosition: -1
+  - operation: 1
+    value: 7
+    zPosition: 178
+    xPosition: 0
+  - operation: 2
+    value: 2
+    zPosition: 243
+    xPosition: 1
+  obstacles:
+  - type: 5
+    zPosition: 169
+    xPosition: 1.2
+    unitDamage: 16
+  - type: 6
+    zPosition: 206
+    xPosition: -1
+    unitDamage: 17
+  - type: 0
+    zPosition: 243
+    xPosition: 0.3
+    unitDamage: 31
+  collectibles:
+  - zPosition: 100
+    xPosition: -1.4
+    armyBonus: 1
+  - zPosition: 165
+    xPosition: 1.3
+    armyBonus: 1
+  fortressHP: 264
+  fortressDefenderCount: 64
   hasBoss: 0
   bossType: 0
-  coinsReward: 50
+  coinsReward: 610
   xpReward: 30
-  threeStarRequirement: 80
-  twoStarRequirement: 40
+  threeStarRequirement: 75
+  twoStarRequirement: 45

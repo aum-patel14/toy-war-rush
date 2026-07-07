@@ -71,4 +71,5 @@ public static class GameEvents
     public const string ObstacleHit = "ObstacleHit";
     public const string UnitMerged = "UnitMerged";
     public const string CoinsChanged = "CoinsChanged";
+    public const string FortressBattleTick = "FortressBattleTick";
 }

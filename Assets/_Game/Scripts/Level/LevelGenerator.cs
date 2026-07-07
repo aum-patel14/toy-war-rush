@@ -48,6 +48,13 @@ public class LevelGenerator : MonoBehaviour
         level.gates.Add(new GateData { operation = GateOperation.Multiply, value = 2, zPosition = z, xPosition = 1f });
 
         level.obstacles.Add(new ObstacleData { type = ObstacleType.SockBall, zPosition = 70 + levelNumber * 3, xPosition = 1.2f, unitDamage = 2 + levelNumber / 2 });
+        if (levelNumber >= 11 && levelNumber <= 20)
+        {
+            level.obstacles.Clear();
+            level.obstacles.Add(new ObstacleData { type = ObstacleType.SpikeRoller, zPosition = 85, xPosition = 1.4f });
+            level.obstacles.Add(new ObstacleData { type = ObstacleType.SpikeRoller, zPosition = 150, xPosition = -1.3f });
+            level.obstacles.Add(new ObstacleData { type = ObstacleType.SpikeRoller, zPosition = 215, xPosition = 0.3f });
+        }
         level.collectibles.Add(new CollectibleData { zPosition = 100, xPosition = -1.2f, armyBonus = 1 });
         return level;
     }

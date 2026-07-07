@@ -6,9 +6,11 @@ using UnityEngine;
 public class EnemyUnitController : MonoBehaviour
 {
     [SerializeField] private float marchSpeed = 2.5f;
-    [SerializeField] private int clashDamage = 1;
+    [SerializeField] private int clashDamage = 2;
+    [SerializeField] private float clashCooldown = 0.35f;
 
     private bool _dead;
+    private float _nextClashTime;
 
     private void Update()
     {
@@ -21,11 +23,30 @@ public class EnemyUnitController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_dead || !other.CompareTag("Player")) return;
+        TryClash(other);
+    }
 
-        _dead = true;
+    private void OnTriggerStay(Collider other)
+    {
+        TryClash(other);
+    }
+
+    private void TryClash(Collider other)
+    {
+        if (_dead || Time.time < _nextClashTime || !other.CompareTag("Player")) return;
+
+        _nextClashTime = Time.time + clashCooldown;
         ArmyManager.Instance?.RemoveUnits(clashDamage);
         FXManager.Instance?.PlayEffect("ObstacleHit", transform.position);
-        Destroy(gameObject);
+        CameraFollow.Instance?.Shake(0.15f);
+
+        if ((ArmyManager.Instance?.ArmyCount ?? 0) <= 0)
+            _dead = true;
+
+        if (Random.value < 0.35f)
+        {
+            _dead = true;
+            Destroy(gameObject);
+        }
     }
 }

@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class CannonShooter : MonoBehaviour
 {
-    [SerializeField] private float fireInterval = 0.18f;
+    [SerializeField] private float fireInterval = 0.12f;
     [SerializeField] private int unitsPerShot = 1;
-    [SerializeField] private float holdBoostMultiplier = 0.55f;
+    [SerializeField] private float holdBoostMultiplier = 0.42f;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform muzzle;
     [SerializeField] private Transform formationTarget;

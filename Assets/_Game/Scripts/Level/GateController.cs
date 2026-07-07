@@ -63,7 +63,19 @@ public class GateController : MonoBehaviour
         if (!other.CompareTag("Player")) return;
 
         _triggered = true;
+        bool positive = operation == GateOperation.Add || operation == GateOperation.Multiply;
         ApplyEffect();
+
+        string floatLabel = operation switch
+        {
+            GateOperation.Multiply => $"×{value}",
+            GateOperation.Add => $"+{Mathf.RoundToInt(value * UpgradeRuntime.GateBonusMultiplier())}",
+            GateOperation.Subtract => $"-{value}",
+            GateOperation.Divide => $"÷{value}",
+            _ => ""
+        };
+        FloatingTextFx.Instance?.Spawn(floatLabel, transform.position, positive ? new Color(0.3f, 0.9f, 0.5f) : new Color(1f, 0.35f, 0.35f));
+        GameplayJuice.Instance?.OnGatePassed(positive);
 
         FXManager.Instance?.PlayEffect("GateHit", transform.position);
         AudioManager.Instance?.PlaySFX("gate_pass");
@@ -88,8 +100,12 @@ public class GateController : MonoBehaviour
                 army.AddUnits(Mathf.RoundToInt(value * UpgradeRuntime.GateBonusMultiplier()));
                 break;
             case GateOperation.Subtract:
-                army.RemoveUnits((int)value);
+            {
+                int remove = (int)value;
+                int current = army.ArmyCount;
+                army.RemoveUnits(Mathf.Max(0, Mathf.Min(remove, current - 1)));
                 break;
+            }
             case GateOperation.Multiply:
                 army.MultiplyArmy(value * UpgradeRuntime.GateBonusMultiplier());
                 break;

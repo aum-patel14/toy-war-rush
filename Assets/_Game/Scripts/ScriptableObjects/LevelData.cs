@@ -64,5 +64,5 @@ public class CollectibleData
 }
 
 public enum WorldTheme { Bedroom, StudyRoom, Classroom, ToyStore, GamingRoom, Kitchen, Garage, Garden, Bathroom, Space }
-public enum ObstacleType { Cat, Pencil, Book, Football, Keyboard, SockBall, ToyTrain, RubberDuck, Toolbox, Flowerpot }
+public enum ObstacleType { Cat, Pencil, Book, Football, Keyboard, SockBall, ToyTrain, RubberDuck, Toolbox, Flowerpot, SpikeRoller, NumberBarrel }
 public enum BossType { None, BigTeddy, RCCarKing, RoboGeneral, CardboardDragon, TheCat, UltraToyGod }

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class CannonProjectile : MonoBehaviour
 {
-    [SerializeField] private float speed = 14f;
-    [SerializeField] private float arcHeight = 1.2f;
+    [SerializeField] private float speed = 18f;
+    [SerializeField] private float arcHeight = 1.4f;
 
     private Vector3 _start;
     private Vector3 _target;
@@ -26,7 +26,7 @@ public class CannonProjectile : MonoBehaviour
     {
         if (_done) return;
 
-        _t += Time.deltaTime * speed * 0.35f;
+        _t += Time.deltaTime * speed * 0.42f;
         if (_t >= 1f)
         {
             _done = true;

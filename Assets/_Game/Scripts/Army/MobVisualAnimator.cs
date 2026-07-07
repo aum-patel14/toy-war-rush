@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class MobVisualAnimator : MonoBehaviour
 {
-    [SerializeField] private float bounceSpeed = 8f;
-    [SerializeField] private float bounceAmount = 0.08f;
+    [SerializeField] private float bounceSpeed = 9f;
+    [SerializeField] private float bounceAmount = 0.11f;
     [SerializeField] private bool enemyStyle;
 
     private Vector3 _baseScale;

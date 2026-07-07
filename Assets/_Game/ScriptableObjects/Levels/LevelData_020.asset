@@ -12,18 +12,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d1c2db86640d324eaceda8432946acb, type: 3}
   m_Name: LevelData_020
   m_EditorClassIdentifier: ToyWarRush::LevelData
-  levelNumber: 0
-  worldName: 
-  theme: 0
-  startingArmySize: 5
-  gates: []
-  obstacles: []
-  collectibles: []
-  fortressHP: 100
-  fortressDefenderCount: 10
-  hasBoss: 0
+  levelNumber: 20
+  worldName: Cave
+  theme: 6
+  startingArmySize: 13
+  gates:
+  - operation: 0
+    value: 25
+    zPosition: 45
+    xPosition: 0
+  - operation: 2
+    value: 2
+    zPosition: 110
+    xPosition: -1
+  - operation: 1
+    value: 8
+    zPosition: 175
+    xPosition: 0
+  - operation: 2
+    value: 3
+    zPosition: 240
+    xPosition: 0.5
+  - operation: 0
+    value: 30
+    zPosition: 305
+    xPosition: 0
+  obstacles:
+  - type: 10
+    zPosition: 85
+    xPosition: 1.4
+    unitDamage: 0
+  - type: 10
+    zPosition: 150
+    xPosition: -1.3
+    unitDamage: 0
+  - type: 11
+    zPosition: 215
+    xPosition: 0.3
+    unitDamage: 12
+  - type: 10
+    zPosition: 280
+    xPosition: -1
+    unitDamage: 0
+  collectibles:
+  - zPosition: 100
+    xPosition: -1.4
+    armyBonus: 1
+  - zPosition: 165
+    xPosition: 1.3
+    armyBonus: 1
+  fortressHP: 222
+  fortressDefenderCount: 46
+  hasBoss: 1
   bossType: 0
-  coinsReward: 50
+  coinsReward: 430
   xpReward: 30
-  threeStarRequirement: 80
-  twoStarRequirement: 40
+  threeStarRequirement: 75
+  twoStarRequirement: 45

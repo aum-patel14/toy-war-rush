@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Upgrade_gate_bonus
   m_EditorClassIdentifier: ToyWarRush::UpgradeData
-  upgradeId: 
-  displayName: 
-  baseCost: 100
+  upgradeId: gate_bonus
+  displayName: Gate Bonus +10%
+  baseCost: 120
   valuePerLevel: 1

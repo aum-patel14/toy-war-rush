@@ -15,6 +15,12 @@ public class PlayerController : MonoBehaviour
     private float _lastTouchX;
     private bool _isDragging;
     private bool _isPlaying;
+    private float _defaultForwardSpeed;
+
+    private void Awake()
+    {
+        _defaultForwardSpeed = forwardSpeed;
+    }
 
     private void OnEnable()
     {
@@ -88,5 +94,6 @@ public class PlayerController : MonoBehaviour
     }
 
     public void SetForwardSpeed(float speed) => forwardSpeed = speed;
+    public void ResetForwardSpeed() => forwardSpeed = _defaultForwardSpeed;
     public void ResetPosition() => _targetX = transform.position.x;
 }

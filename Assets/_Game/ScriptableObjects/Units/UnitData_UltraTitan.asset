@@ -15,7 +15,7 @@ MonoBehaviour:
   tier: 5
   displayName: Ultra Titan
   icon: {fileID: 0}
-  prefab: {fileID: 4271852488583515733, guid: f3f18d3bc1b557d4bbeda8b86619ce36, type: 3}
+  prefab: {fileID: 2008580277488336197, guid: f3f18d3bc1b557d4bbeda8b86619ce36, type: 3}
   maxHP: 150
   attackDamage: 80
   attackSpeed: 1

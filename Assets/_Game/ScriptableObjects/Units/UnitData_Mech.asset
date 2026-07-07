@@ -15,7 +15,7 @@ MonoBehaviour:
   tier: 3
   displayName: Mech
   icon: {fileID: 0}
-  prefab: {fileID: 6065800016247493204, guid: f0e7479144871fc4f808fef3a2ebc138, type: 3}
+  prefab: {fileID: 6979828196848166033, guid: f0e7479144871fc4f808fef3a2ebc138, type: 3}
   maxHP: 55
   attackDamage: 30
   attackSpeed: 1

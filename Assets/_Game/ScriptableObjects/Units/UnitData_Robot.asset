@@ -15,7 +15,7 @@ MonoBehaviour:
   tier: 2
   displayName: Robot
   icon: {fileID: 0}
-  prefab: {fileID: 6356152052347511041, guid: ae37b64ccadb8a1498f7a82978351b7f, type: 3}
+  prefab: {fileID: 8736890756881052614, guid: ae37b64ccadb8a1498f7a82978351b7f, type: 3}
   maxHP: 35
   attackDamage: 18
   attackSpeed: 1

@@ -13,6 +13,15 @@ public class EnemyArmyManager : MonoBehaviour
 
     private readonly List<GameObject> _spawned = new();
 
+    public int ActiveCount
+    {
+        get
+        {
+            _spawned.RemoveAll(go => go == null);
+            return _spawned.Count;
+        }
+    }
+
     private void Awake()
     {
         if (Instance != null) { Destroy(gameObject); return; }
@@ -22,7 +31,10 @@ public class EnemyArmyManager : MonoBehaviour
     public void ClearEnemies()
     {
         foreach (var go in _spawned)
-            if (go != null) Destroy(go);
+        {
+            if (go != null)
+                Destroy(go);
+        }
         _spawned.Clear();
     }
 
@@ -43,5 +55,23 @@ public class EnemyArmyManager : MonoBehaviour
     public void SpawnFortressDefenders(int count, Vector3 fortressPos)
     {
         SpawnLaneEnemies(count, fortressPos.z - 2f, fortressPos.x);
+    }
+
+    public void RemoveEnemies(int count)
+    {
+        _spawned.RemoveAll(go => go == null);
+        count = Mathf.Min(count, _spawned.Count);
+        for (int i = 0; i < count; i++)
+        {
+            int idx = _spawned.Count - 1;
+            if (idx < 0) break;
+            var go = _spawned[idx];
+            _spawned.RemoveAt(idx);
+            if (go != null)
+            {
+                FXManager.Instance?.PlayEffect("ObstacleHit", go.transform.position);
+                Destroy(go);
+            }
+        }
     }
 }
